@@ -1,5 +1,6 @@
-content_input/
-style_input/
 output/
 virtual_env
 src/__pycache__
+dataset/
+decoder_results
+models_backup
