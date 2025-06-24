@@ -1,12 +1,17 @@
 import torchvision.transforms as transforms
 
 
-# Convert image from PIL to PyTorch tensor
-def PIL_image_to_Torch_tensor(image):
-    # Convert the PIL image to Torch tensor
-
-    transform = transforms.Compose([transforms.PILToTensor()])
+# Transform that convert PIL image to PyTorch tensor
+def PIL_image_to_Torch_tensor():
+    transform = transforms.Compose([transforms.Resize((224, 224)),
+                                    transforms.ToTensor()
+                                    ])
     
-    image_tensor = transform(image)
+    return transform
 
-    return image_tensor
+
+# Transform that convert PyTorch tensor to PIL image 
+def Torch_tensor_to_PIL_image():
+    transform = transforms.ToPILImage()
+
+    return transform
